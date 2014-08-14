@@ -1,0 +1,6 @@
+cmake_minimum_required(VERSION 2.8)
+project(antialiasing)
+ADD_EXECUTABLE(generate generate.c)
+ADD_EXECUTABLE(iter iter.cpp)
+find_package(CUDA REQUIRED)
+CUDA_ADD_EXECUTABLE(antialiasing antialiasing.cu)

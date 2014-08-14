@@ -1,0 +1,6 @@
+cmake_minimum_required(VERSION 2.8)
+project(picuda)
+#add_executable(iter picudaiter.cc)
+find_package(CUDA REQUIRED)
+set(CUDA_NVCC_FLAGS ${CUDA_NVCC_FLAGS};-O3 -gencode arch=compute_35,code=sm_35)
+CUDA_ADD_EXECUTABLE(picuda picuda.cu)
